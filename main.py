@@ -43,13 +43,17 @@ def predict():
 
         # Convert the JSON data to a pandas DataFrame
         # The column order must match the order the model was trained on
-        input_data = pd.DataFrame([data])
         
-        # Make a prediction using the loaded model
-        prediction = model.predict(input_data)
+        predictions = []
+        for delivery in data:
+            input_data = pd.DataFrame([data])
+        
+            # Make a prediction using the loaded model
+            prediction = model.predict(input_data)
+            predictions.append(prediction)
         
         # Return the prediction as a JSON response
-        return jsonify({"predicted_travel_time_minutes": prediction[0]})
+        return jsonify({"predicted_travel_time_minutes": predictions})
         
     except Exception as e:
         # Handle potential errors during prediction
