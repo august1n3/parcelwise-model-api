@@ -2,4 +2,12 @@ pip
 autopep8
 Flask==3.0.3
 gunicorn==22.0.0
+pandas
+scikit-learn
+numpy
+requests
+scipy
+joblib
+networkx
+matplotlib
 Werkzeug==3.0.6
