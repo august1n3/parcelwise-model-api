@@ -58,4 +58,4 @@ def predict():
 if __name__ == '__main__':
     # Run the app. For development, use debug=True.
     # For production, use a production-ready WSGI server like Gunicorn or uWSGI.
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(debug=False, host='0.0.0.0', port=8080)
