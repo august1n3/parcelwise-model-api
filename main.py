@@ -50,7 +50,7 @@ def predict():
         
             # Make a prediction using the loaded model
             prediction = model.predict(input_data)
-            predictions.append(prediction.toList())
+            predictions.append(prediction.tolist())
   
         # Return the prediction as a JSON response
         return jsonify(predictions)
