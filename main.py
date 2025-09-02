@@ -51,9 +51,9 @@ def predict():
             # Make a prediction using the loaded model
             prediction = model.predict(input_data)
             predictions.append(prediction)
-        
+        jsonForm = json.dumps(predictions)
         # Return the prediction as a JSON response
-        return jsonify({predictions})
+        return jsonify({jsonForm})
         
     except Exception as e:
         # Handle potential errors during prediction
