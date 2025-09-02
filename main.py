@@ -46,7 +46,7 @@ def predict():
         
         predictions = []
         for delivery in data:
-            input_data = pd.DataFrame([data])
+            input_data = pd.DataFrame([delivery])
         
             # Make a prediction using the loaded model
             prediction = model.predict(input_data)
