@@ -25,3 +25,4 @@ instance/
 .idx/
 # Environment variables
 .env
+*.csv
