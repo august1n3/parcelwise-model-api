@@ -53,7 +53,7 @@ def predict():
             predictions.append(prediction[0])
   
         # Return the prediction as a JSON response
-        return jsonify({'predicted_travel_time':predictions})
+        return jsonify({'predicted_travel_times':predictions})
         
     except Exception as e:
         # Handle potential errors during prediction
