@@ -8,10 +8,10 @@ app = Flask(__name__)
 # Make sure your trained GradientBoostingRegressor model is saved as a .joblib file
 # You can do this in your notebook with: joblib.dump(your_model, 'gradient_boosting_model.joblib')
 try:
-    model = joblib.load('gradient_boosting_model.joblib')
+    model = joblib.load('parcel_wise_model.joblib')
 except FileNotFoundError:
     model = None  # Or handle the error appropriately
-    print("Error: The model file 'gradient_boosting_model.joblib' was not found.")
+    print("Error: The model file 'parcel_wise_model.joblib' was not found.")
 
 @app.route('/predict', methods=['POST'])
 def predict():
