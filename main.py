@@ -50,10 +50,10 @@ def predict():
         
             # Make a prediction using the loaded model
             prediction = model.predict(input_data)
-            predictions.append(prediction.tolist())
+            predictions.append(prediction[0])
   
         # Return the prediction as a JSON response
-        return jsonify(predictions)
+        return jsonify({'predicted_travel_time':predictions})
         
     except Exception as e:
         # Handle potential errors during prediction
