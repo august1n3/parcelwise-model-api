@@ -27,3 +27,4 @@ instance/
 .env
 *.csv
 parcewisecode.ipynb
+.DS_Store
