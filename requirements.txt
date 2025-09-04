@@ -11,3 +11,4 @@ joblib
 networkx
 matplotlib
 Werkzeug==3.0.6
+xgboost
