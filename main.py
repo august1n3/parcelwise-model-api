@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import pandas as pd
-import joblib
+# import joblib
+import xgboost as xgb
+
 
 app = Flask(__name__)
 
@@ -8,10 +10,11 @@ app = Flask(__name__)
 # Make sure your trained GradientBoostingRegressor model is saved as a .joblib file
 # You can do this in your notebook with: joblib.dump(your_model, 'gradient_boosting_model.joblib')
 try:
-    model = joblib.load('parcel_wise_model.joblib')
+    model = xgb.XGBRegressor()
+    model.load_model('parcel_wise_model.json')
 except FileNotFoundError:
     model = None  # Or handle the error appropriately
-    print("Error: The model file 'parcel_wise_model.joblib' was not found.")
+    print("Error: The model file 'parcel_wise_model.json' was not found.")
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -23,13 +26,12 @@ def predict():
     {
         "receipt_lng": 35.7388,
         "receipt_lat": -6.1752,
-        "sign_lng": 35.7723,
-        "sign_lat": -6.1917,
+        "poi_lng": 35.7723,
+        "poi_lat": -6.1917,
         "hour": 14,
         "day_of_week": 1,
         "distance_km": 5.2,
-        "city_encoded": 1,
-        "typecode_encoded": 2
+        "city_encoded": 1
     }
     """
     if not model:
