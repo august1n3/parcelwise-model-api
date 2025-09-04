@@ -26,3 +26,4 @@ instance/
 # Environment variables
 .env
 *.csv
+parcewisecode.ipynb
